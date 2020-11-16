@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So nguyen to</title>
+</head>
+<body>
+<script>
+    let num = 0;
+    let count = 0;
+    let str = "";
+    let total = 0;
+    let equa = 1;
+    let N = parseInt(prompt("nhap so luong so nguyen to ban muon tim"))
+    while (count<N) {
+        let flag = true;
+        if (num < 2) {
+            flag = false;
+            console.log(flag)
+        } else if (num == 2) {
+            flag = true;
+        } else {
+            if (num % 2 == 0) {
+                flag = false;
+            } else {
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        flag = false;}
+                }
+            }
+        }
+        if (flag==true){
+            count+=1;
+            str += num + " ; ";
+            total +=num;
+            equa = equa*num
+        }
+        num++
+    }
+    document.write("cac so nguyen to can tim: "+ str)
+    document.write('<br>')
+    document.write("tong = " +total)
+    document.write('<br>')
+    document.write("tich = " +equa)
+
+
+</script>
+</body>
+</html>
